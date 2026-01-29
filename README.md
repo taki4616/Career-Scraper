@@ -1,4 +1,4 @@
-# 🚀 Job Aggregator
+# 🚀 Career-Scraper
 
 A web scraping application that aggregates remote job listings from multiple sources including RemoteOK and WeWorkRemotely. Built with Python (FastAPI + Beautiful Soup) backend and vanilla JavaScript frontend.
 
@@ -66,6 +66,7 @@ Then visit `http://localhost:3000`
 ### API Endpoints
 
 #### Scrape Jobs
+
 ```bash
 POST http://localhost:8000/scrape
 Content-Type: application/json
@@ -77,21 +78,25 @@ Content-Type: application/json
 ```
 
 #### Get All Jobs
+
 ```bash
 GET http://localhost:8000/jobs?limit=100
 ```
 
 #### Search Jobs
+
 ```bash
 GET http://localhost:8000/jobs/search?keyword=python
 ```
 
 #### Get Jobs by Source
+
 ```bash
 GET http://localhost:8000/jobs/source/RemoteOK
 ```
 
 #### Clear All Jobs
+
 ```bash
 DELETE http://localhost:8000/jobs
 ```
@@ -109,6 +114,7 @@ DELETE http://localhost:8000/jobs
 ### Data Structure
 
 Each job contains:
+
 - `title`: Job title
 - `company`: Company name
 - `location`: Job location (usually "Remote")
@@ -136,6 +142,7 @@ Then add it to `scrape_all()` method.
 ### Modifying the UI
 
 Edit `frontend/index.html` to customize:
+
 - Colors and styling (in the `<style>` section)
 - Layout and structure
 - API endpoint URL (change `API_URL` in JavaScript)
@@ -150,6 +157,7 @@ Edit `frontend/index.html` to customize:
 - Only scrapes publicly available data
 
 **Ethical Guidelines**:
+
 - Check `robots.txt` before scraping
 - Don't overload servers with requests
 - Respect website terms of service
@@ -158,16 +166,19 @@ Edit `frontend/index.html` to customize:
 ## Troubleshooting
 
 ### Backend won't start
+
 - Make sure all dependencies are installed: `pip install -r requirements.txt --break-system-packages`
 - Check if port 8000 is available
 - Look for error messages in terminal
 
 ### Frontend can't connect to API
+
 - Make sure backend is running on port 8000
 - Check CORS settings if serving frontend from different domain
 - Verify API_URL in `index.html` is correct
 
 ### No jobs found
+
 - Some websites may have changed their HTML structure
 - Try different keywords
 - Check if websites are accessible from your location
